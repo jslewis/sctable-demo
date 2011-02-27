@@ -11,23 +11,7 @@ SCTableDemo.mainPage = SC.Page.design({
       target: SCTableDemo.tableController,
       action: 'sayHi',
 
-      //content: [SC.Object.create({ index: 0 })],
       contentBinding: 'SCTableDemo.tableController.arrangedObjects',
-      // init: function() {
-      //   sc_super();
-      //   
-      //   var content = [];
-      //   var count = 10;
-      //   
-      //   for (var i = 0; i < count; i++) {
-      //     content.push(SC.Object.create({
-      //       index: i
-      //     }));
-      //   }
-      // 
-      //   this.set('content', content);
-      // },
-      
       selectionBinding: 'SCTableDemo.tableController.selection',
 
       columnsBinding: 'SCTableDemo.tableColumnsController.arrangedObjects',

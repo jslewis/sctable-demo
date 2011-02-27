@@ -35,7 +35,5 @@ SCTableDemo.tableColumnsController = SC.ArrayController.create({
       valueKey: 'colB'
     })
   ]
-  
-  //allowsMultipleSelection: YES
-  
+    
 });
