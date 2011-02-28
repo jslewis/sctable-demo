@@ -4300,7 +4300,7 @@ SC.BEST_FIT="fitBest";SC.BEST_FIT_DOWN_ONLY="fitBestDown";SC.IMAGE_STATE_NONE="n
 SC.IMAGE_STATE_LOADING="loading";SC.IMAGE_STATE_LOADED="loaded";SC.IMAGE_STATE_FAILED="failed";
 SC.IMAGE_TYPE_NONE="NONE";SC.IMAGE_TYPE_URL="URL";SC.IMAGE_TYPE_CSS_CLASS="CSS_CLASS";
 SC.BLANK_IMAGE_DATAURL="data:image/gif;base64,R0lGODlhAQABAJAAAP///wAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw==";
-SC.BLANK_IMAGE_URL=SC.browser.msie&&SC.browser.msie<8?"/static/sproutcore/foundation/en/472c9bf7a81f082a1c9ac185ba62288f16069418/blank.gif":SC.BLANK_IMAGE_DATAURL;
+SC.BLANK_IMAGE_URL=SC.browser.msie&&SC.browser.msie<8?"http://jslewis.github.com/sctable-demo/static/sproutcore/foundation/en/472c9bf7a81f082a1c9ac185ba62288f16069418/blank.gif":SC.BLANK_IMAGE_DATAURL;
 SC.BLANK_IMAGE=new Image();SC.BLANK_IMAGE.src=SC.BLANK_IMAGE_URL;SC.BLANK_IMAGE.width=SC.BLANK_IMAGE.height=1;
 SC.ImageView=SC.View.extend(SC.Control,{classNames:"sc-image-view",displayProperties:"image imageValue innerFrame frame status scale toolTip type".w(),renderDelegateName:function(){return(this.get("useCanvas")?"canvasImage":"image")+"RenderDelegate"
 }.property("useCanvas").cacheable(),tagName:function(){return this.get("useCanvas")?"canvas":"div"
