@@ -4836,7 +4836,7 @@ this.childViews=[a]}},render:function(a,b){if(b){a.push("<div class='top-left-ed
 a.set("layout",this.contentLayout);this.replaceContent(a)}.observes("contentView")});
 if((typeof SC!=="undefined")&&SC&&SC.bundleDidLoad){SC.bundleDidLoad("sproutcore/desktop")
 }window.SCTable=SC.Object.create({SORT_DIRECTION_NONE:null,SORT_DIRECTION_ASCENDING:"asc",SORT_DIRECTION_DESCENDING:"desc"});
-SCTable.Column={isColumn:YES,name:"Column Name",valueKey:null,width:100,canResize:YES,canSort:YES,classNames:null};
+SCTable.Column={isColumn:YES,name:"Column Name",valueKey:null,iconKey:null,width:100,canResize:YES,canSort:YES,classNames:null};
 SCTable.TableColumnsDelegate={isTableColumnsDelegate:YES,beginColumnResizeDrag:function(){},updateColumnResizeDrag:function(a,c,b,d){},endColumnResizeDrag:function(){},tableColumnDidRequestSort:function(b,a,c){}};
 SCTable.TableDelegate={isTableDelegate:YES,tableDidRequestSort:function(a,d,c,b,e){return NO
 },renderTableCellContent:function(a,b,e,f,d,c){return b.text(e?e.get(d.get("valueKey")):null)
@@ -4844,10 +4844,11 @@ SCTable.TableDelegate={isTableDelegate:YES,tableDidRequestSort:function(a,d,c,b,
 },contentPropertyDidChange:function(){this.displayDidChange()},render:function(d,a){var b=this.getPath("displayDelegate.tableDelegate");
 var f=b?b.get("columns"):null;var h=(b?b.get("tableWidth"):0)||0;var e=0,j,c,k;var i=this.get("content");
 var g=this.get("contentIndex");d=d.addClass((g%2===0)?"even":"odd");d=d.setClass("hover",this.get("isMouseOver"));
-if(f&&f.isEnumerable){f.forEach(function(m,l){c=m.get("width")||0;d=d.push('<div class="cell col-%@" style="left: %@px; top: 0px; bottom: 0px; width: %@px;">'.fmt(l,e,c));
-d=b.renderTableCellContent(this,d,i,g,m,l);d=d.push("</div>");e+=c},this)}},mouseEntered:function(a){this.set("isMouseOver",YES)
-},mouseExited:function(a){this.set("isMouseOver",NO)}});sc_require("mixins/table_columns_delegate");
-SCTable.TableHeaderView=SC.CollectionView.extend(SCTable.TableColumnsDelegate,{classNames:"sctable-header-view",sort:null,ownerTableView:null,ghostActsLikeCursor:YES,shouldLiveResize:YES,insertionPointView:SC.View.extend({backgroundColor:"red",layout:{left:0,top:0,bottom:0,width:2},render:function(a,b){if(b){a.push('<div class="anchor"></div>')
+if(f&&f.isEnumerable){f.forEach(function(m,l){var n=m.get("iconKey");c=m.get("width")||0;
+d=d.push('<div class="cell col-%@ %@" style="left: %@px; top: 0px; bottom: 0px; width: %@px;">'.fmt(l,(n?"has-icon":""),e,c));
+d=b.renderTableCellContent(this,d,i,g,m,l);d=n?d.push('<div class="icon %@"></div></div>'.fmt(i.get(n))):d.push("</div>");
+e+=c},this)}},mouseEntered:function(a){this.set("isMouseOver",YES)},mouseExited:function(a){this.set("isMouseOver",NO)
+}});sc_require("mixins/table_columns_delegate");SCTable.TableHeaderView=SC.CollectionView.extend(SCTable.TableColumnsDelegate,{classNames:"sctable-header-view",sort:null,ownerTableView:null,ghostActsLikeCursor:YES,shouldLiveResize:YES,insertionPointView:SC.View.extend({backgroundColor:"red",layout:{left:0,top:0,bottom:0,width:2},render:function(a,b){if(b){a.push('<div class="anchor"></div>')
 }}}),layoutForContentIndex:function(e){var c=this.get("content");var d=0,b,a;if(c&&c.isEnumerable){c.forEach(function(g,f){if(f<e){d+=g.get("width")
 }else{if(f===e){b=g.get("width")}}});a={left:d,width:b}}return a},createItemView:function(e,a,b){var c=this.get("sort");
 var d=c?c.valueKey:null;if(b.content&&(b.content.get("valueKey")===d)){b.sortDirection=c?c.direction:null
