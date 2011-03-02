@@ -14,7 +14,8 @@ SCTableDemo.tableController = SC.ArrayController.create({
       content.push(SC.Object.create({
         name: 'item %@'.fmt(i),
         index: i,
-        description: 'This is a row description for row %@'.fmt(i)
+        description: 'This is a row description for row %@'.fmt(i),
+        nameIcon: 'name-16'
       }));
     }
 

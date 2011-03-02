@@ -14,7 +14,8 @@ SCTableDemo.tableColumnsController = SC.ArrayController.create({
     SC.Object.create(SCTable.Column, {
       name: 'Name (No Sort)',
       valueKey: 'name',
-      canSort: NO
+      canSort: NO,
+      iconKey: 'nameIcon'
     }),
     SC.Object.create(SCTable.Column, {
       name: 'Description',
