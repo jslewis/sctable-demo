@@ -6,7 +6,7 @@ SCTableDemo.mainPage = SC.Page.design({
     childViews: 'tableView'.w(),
     
     tableView: SCTable.TableView.design({
-      layout: { left: 200, top: 50, bottom: 50, right: 200 },
+      layout: { left: 0, top: 0, bottom: 0, right: 0 },
 
       target: SCTableDemo.tableController,
       action: 'sayHi',
