@@ -1,0 +1,32 @@
+/*.main-demo-pane {
+  background
+}
+*/
+.main-page-title {
+  font-size: 42px !important;
+  line-height: 80px !important;
+}
+
+.source-link-view {
+  font-size: 14px !important;
+  line-height: 23px !important;
+  color: gray;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-align: center;
+}
+
+.source-link-view a:link {
+  color: gray;
+  text-decoration: none;
+}
+
+.source-link-view a:visited {
+  color: gray;
+  text-decoration: none;
+}
+
+.source-link-view a:active {
+  color: gray;
+}
