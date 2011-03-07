@@ -1,7 +1,7 @@
 /*globals SCTableDemo SCTable*/
 
 /*
-  An exceedingly ugly way to generate some sample data. (Source string is randomly generated.  None of it is real.)
+  (Source data below is randomly generated.  None of it is real.)
 */
 
 SCTableDemo.sampleDataColumns = [
