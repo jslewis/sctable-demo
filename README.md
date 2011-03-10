@@ -8,7 +8,7 @@ Click [here](http://jslewis.github.com/sctable-demo/) to play with it.
 
 Make sure you add these frameworks:
 
-  * [__Sproutcore__](http://www.github.com/sproutcore/sproutcore) (version 1.4 stable officially, though as far as I've tested, the current state of 1.5 also works)
+  * [__Sproutcore__](http://www.github.com/sproutcore/sproutcore) (versions 1.4-stable through 1.5.0.pre.4)
   * [__SCTable__](http://www.github.com/jslewis/sctable)
 
 to your 'frameworks' folder before you run this project on your local machine.
