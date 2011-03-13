@@ -29,7 +29,8 @@ SCTableDemo.sampleDataColumns = [
   SC.Object.create(SCTable.Column, {
     name: "Some Stars!",
     valueKey: 'stars',
-    width: 100
+    width: 100,
+    canResize: NO
   }),
   SC.Object.create(SCTable.Column, {
     name: "Date",
