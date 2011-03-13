@@ -1,11 +1,16 @@
 /*globals SCTableDemo SCTable*/
 
+/*
+  Note this controller also mixes in SCTable.TableDelegate to allow it to take
+  over some special cell rendering below.
+*/
+
 SCTableDemo.tableController = SC.ArrayController.create(SCTable.TableDelegate, {
 
   // PUBLIC METHODS
 
   contentBinding: 'SCTableDemo.sampleRows',
-  
+    
   // PUBLIC METHODS
   
   sayHi: function() {
@@ -42,15 +47,18 @@ SCTableDemo.tableController = SC.ArrayController.create(SCTable.TableDelegate, {
   */
   _renderStars: function(tableView, renderContext, rowContent, rowIndex, column, columnIndex) {
     var numStars = rowContent.get('stars') * 1, i;
+    var on = ['', '', '', '', ''];
     
-    renderContext = renderContext.push('<div class=\"stars-0\"></div>');
-    
-    // draw five stars -- see CSS def for styling and positioning
-    for (i = 1; i <= 5; i++) {
-      renderContext = renderContext.push('<div class=\"stars-%@ %@\"></div>'.fmt(i, (i <= numStars) ? 'on' : ''));
+    // The content template, this._STARS_TEMPLATE, contains placeholders for adding
+    // classes to show which stars should be 'lit'.  Replace appropriate placeholders
+    // with the 'on' class and the rest with empty strings.  Calls to renderContext methods are
+    // quite expensive relatively speaking so this way we reduce everything down to one
+    // renderContext.push() call below.
+    for (i = 0; i < numStars; i++) {
+      on[i] = 'on';
     }
-
-    return renderContext;
+    
+    return renderContext.push(this._STARS_TEMPLATE.fmt.apply(this._STARS_TEMPLATE, on));
   },
   
   /*
@@ -73,6 +81,14 @@ SCTableDemo.tableController = SC.ArrayController.create(SCTable.TableDelegate, {
       }
     }
     
-  }
+  },
+  
+  // PRIVATE PROPERTIES
+  
+  /*
+    Template string for rendering the stars column -- we'll substitute an 'on' class at render time for the '%@'
+    in any star divs that should be 'lit', and an empty string for the rest.
+  */
+  _STARS_TEMPLATE: '<div class=\"stars-0\"></div><div class=\"stars-1 %@\"></div><div class=\"stars-2 %@\"></div><div class=\"stars-3 %@\"></div><div class=\"stars-4 %@\"></div><div class=\"stars-5 %@\"></div>'
 
 });
