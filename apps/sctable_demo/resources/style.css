@@ -1,7 +1,4 @@
-/*.main-demo-pane {
-  background
-}
-*/
+
 .main-page-title {
   font-size: 42px !important;
   line-height: 80px !important;
@@ -29,4 +26,69 @@
 
 .source-link-view a:active {
   color: gray;
+}
+
+
+/*
+  Styling for stars column
+*/
+
+.stars-0 {
+  top: 6px;
+  left: 0px;
+  width: 10px;
+  height: 16px;
+}
+
+.stars-1 {
+  top: 6px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+	background-image: static_url('images/mini_888888.png');
+	background-position: -224px -112px;
+}
+
+.stars-2 {
+  top: 6px;
+  left: 26px;
+  width: 16px;
+  height: 16px;
+	background-image: static_url('images/mini_888888.png');
+	background-position: -224px -112px;
+}
+
+.stars-3 {
+  top: 6px;
+  left: 42px;
+  width: 16px;
+  height: 16px;
+	background-image: static_url('images/mini_888888.png');
+	background-position: -224px -112px;
+}
+
+.stars-4 {
+  top: 6px;
+  left: 58px;
+  width: 16px;
+  height: 16px;
+	background-image: static_url('images/mini_888888.png');
+	background-position: -224px -112px;
+}
+
+.stars-5 {
+  top: 6px;
+  left: 74px;
+  width: 16px;
+  height: 16px;
+	background-image: static_url('images/mini_888888.png');
+	background-position: -224px -112px;
+}
+
+/*
+  When a star is on, give it a darker color
+*/
+.stars-1.on, .stars-2.on, .stars-3.on, .stars-4.on, .stars-5.on {
+  background-image: static_url('images/mini_222222.png');
+	background-position: -224px -112px;
 }
