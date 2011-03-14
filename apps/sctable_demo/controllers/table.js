@@ -31,13 +31,11 @@ SCTableDemo.tableController = SC.ArrayController.create(SCTable.TableDelegate, {
   */
   renderTableCellContent: function(tableView, renderContext, rowContent, rowIndex, column, columnIndex) {
     if (column.get('valueKey') === 'stars') { // demo specialized rendering -- make an itunes-like stars column
-      renderContext = this._renderStars(tableView, renderContext, rowContent, rowIndex, column, columnIndex);
+      return this._renderStars(tableView, renderContext, rowContent, rowIndex, column, columnIndex);
     }
     else {
-      renderContext = renderContext.push('<div class=\"text\">%@</div>'.fmt(SC.RenderContext.escapeHTML(rowContent ? rowContent.get(column.get('valueKey')) : null)));
+      return sc_super();
     }
-  
-    return renderContext;
   },
   
   // PRIVATE METHODS
