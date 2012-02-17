@@ -8,7 +8,7 @@ Click [here](http://sctable-demo.strobeapp.com) to play with it.
 
 Make sure you add these frameworks:
 
-  * [__Sproutcore__](http://www.github.com/sproutcore/sproutcore) (versions 1.4-stable through 1.5.0.pre.4)
+  * [__Sproutcore__](http://www.github.com/sproutcore/sproutcore) (Versions 1.4-stable through 1.7.0, though styling is currently a bit off due to Sproutcore theme changes I haven't caught up to yet.)
   * [__SCTable__](http://www.github.com/jslewis/sctable)
 
 to your 'frameworks' folder before you run this project on your local machine.
