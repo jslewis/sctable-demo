@@ -34,7 +34,7 @@ SCTableDemo.tableController = SC.ArrayController.create(SCTable.TableDelegate, {
       return this._renderStars(tableView, renderContext, rowContent, rowIndex, column, columnIndex);
     }
     else {
-      return renderContext.push('<div class=\"text\">%@</div>'.fmt(SC.RenderContext.escapeHTML(rowContent ? rowContent.get(column.get('valueKey')) : null)));
+      return renderContext.push('<div class=\"text\">%@</div>'.fmt(SC.RenderContext.escapeHTML(String(rowContent ? rowContent.get(column.get('valueKey')) : null))));
     }
   },
   
