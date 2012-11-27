@@ -2,7 +2,7 @@
 
 This is a simple Sproutcore demo app for the [SCTable](http://www.github.com/jslewis/sctable) project, a table view for Sproutcore.
 
-Click [here](http://sctable-demo.strobeapp.com) to play with it.
+Click [here](http://jslewis.github.com/sctable-demo/index.html) to play with it.
 
 #Dependencies
 
